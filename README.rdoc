@@ -1,0 +1,70 @@
+# README
+
+https://www.youtube.com/watch?v=uMyY5Ct-DXk&feature=em-share_video_user
+
+## Steps to create a new rails app
+
+* rails new railsblog -T -d postgresql
+
+* rake db:create
+
+* Start with the routes file
+
+** Add routes and resources for users, sessions, and posts
+
+* Rake routes to make sure all the routes have been set up. Add root path
+
+* Create controllers next using rails g command
+
+** Delete the methods created in the routes file as its duplicative
+
+* rails s
+** You should get unitialized constant error
+
+* Create user, posts model
+** rails g model User first_name last_name email password_digest
+** rails g model Post title description
+
+* Define relationships in user.rb and post.rb and update the post migrate to add a column for userId
+
+* Check User.all in rails c
+
+* Set up secure password
+
+* Create a new user and a new post from console
+
+* Assign relationship by doing v.posts << p (new_user.posts contains the new post)
+
+* render :new in the new method on the users controller
+
+* Work on new view and make a new form
+
+*Check the view and add @user to new method
+
+*Set up Create method
+
+*Set up a private params method
+
+*Check if sign up takes to profile page
+
+* Set up show method 
+
+* Set up show view
+
+* Set up new controller for sessions
+
+* Set up new view for new session
+
+* Set up sessions controller
+
+* Set up create, destroy methods
+
+* Update application controller to allow session id to be available from anywhere
+
+* Add methods to prevent users from going to profile without logging in and to prevent logged in users to login again
+
+
+
+
+
+
