@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  before_filter :authorize, only: [:show]  
 #form to create new user
   def new
   	if current_user
@@ -12,15 +12,18 @@ class UsersController < ApplicationController
 
 #create new user in db
   def create
-  	user = User.new(user_params)
-  	if user.save
-  		session[:user_id] = user.id
-  		redirect_to profile_path
+  	if current_user
+      redirect_to profile_path
+    else
+      user = User.new(user_params)
+  	   if user.save
+    		session[:user_id] = user.id
+    		redirect_to profile_path
 
   	else
   		redirect_to signup_path
+    end
   end
-
 end
 
 #show current user

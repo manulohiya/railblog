@@ -63,6 +63,12 @@ https://www.youtube.com/watch?v=uMyY5Ct-DXk&feature=em-share_video_user
 
 * Add methods to prevent users from going to profile without logging in and to prevent logged in users to login again
 
+* Create controller and views for posts
+
+
+
+
+
 
 
 

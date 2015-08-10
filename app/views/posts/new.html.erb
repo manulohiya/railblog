@@ -1,0 +1,12 @@
+<h1> Create new post </h1>
+
+<%= form_for @post do |f| %>
+
+	<%= f.text_field :title, placeholder: "Title" %><br>
+	<%= f.text_field :description, placeholder: "Description" %> <br>
+	
+	<hr>
+	<%= f.submit "Submit" %>
+
+
+<% end %>

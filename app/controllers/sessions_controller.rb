@@ -1,8 +1,13 @@
 class SessionsController < ApplicationController
   # login form
   def new
-  	render :new
+    if current_user
+      redirect_to profile_path
+  	else
+    render :new
+    end
   end
+
 
 
   # authenticate the user, set session, redirect

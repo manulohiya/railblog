@@ -1,0 +1,11 @@
+<h1>Posts Book </h1>
+<hr>
+
+<% @posts.each do |post| %>
+	<p> <%= post.title %> - <%= post.description %> <%= link_to "View Posts", post_path(post) %></p>
+<% end %> 
+
+<% if current_user %>
+	<hr>
+	<%= link_to "Add Post", new_post_path(post) %> 
+<% end %>	

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
  
-
-
   # Users routes
   get "/signup", to: "users#new"
   get "/profile", to: "users#show"
@@ -10,11 +8,11 @@ Rails.application.routes.draw do
 
   # Sesions routes
   get "/login", to: "sessions#new"
-  get "/logout", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
   resources :sessions, only: [:create]
 
   # Posts routes
-  resources :posts
+  resources :posts, except: [:index]
 
   root "posts#index"
 
